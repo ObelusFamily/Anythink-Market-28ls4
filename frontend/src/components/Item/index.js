@@ -9,10 +9,13 @@ import {
   ITEM_PAGE_UNLOADED,
 } from "../../constants/actionTypes";
 
+
+
 const mapStateToProps = (state) => ({
   ...state.item,
   currentUser: state.common.currentUser,
 });
+
 
 const mapDispatchToProps = (dispatch) => ({
   onLoad: (payload) => dispatch({ type: ITEM_PAGE_LOADED, payload }),
