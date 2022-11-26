@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one_attached :image
+  after_create_commit image_nil
 
   scope :sellered_by, ->(username) { where(user: User.where(username: username)) }
   scope :favorited_by, ->(username) { joins(:favorites).where(favorites: { user: User.where(username: username) }) }
