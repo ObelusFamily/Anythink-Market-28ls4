@@ -17,7 +17,6 @@ class Item < ApplicationRecord
 
   def image_nil
       self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'placeholder.png')), filename: 'placeholder.png', content_type: 'image/png')
-    end
   end
 
   before_validation do
